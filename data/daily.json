@@ -1,0 +1,33 @@
+[
+  {
+    "id": "2024-05-20-evening-run",
+    "timestamp": "2024-05-20T20:45:00+08:00",
+    "location": "深圳",
+    "mood": "\u2728",
+    "content": "晚风不燥，沿着海岸跑完 5 公里，顺手拍了一张夕阳照。",
+    "images": [
+      "/assets/daily/sunset-run.jpg"
+    ],
+    "platform": "朋友圈"
+  },
+  {
+    "id": "2024-05-18-coffee-chat",
+    "timestamp": "2024-05-18T10:30:00+08:00",
+    "location": "广州",
+    "mood": "\u2615\ufe0f",
+    "content": "和老朋友在独立咖啡店聊了一上午，重新燃起做 side project 的冲动。",
+    "images": [],
+    "platform": "QQ 说说"
+  },
+  {
+    "id": "2024-05-15-reading",
+    "timestamp": "2024-05-15T23:10:00+08:00",
+    "location": "深圳",
+    "mood": "\ud83d\udcda",
+    "content": "睡前读完《深度工作》第三章，准备明天试试作者的时间块排程。",
+    "images": [
+      "/assets/daily/book-note.jpg"
+    ],
+    "platform": "朋友圈"
+  }
+]

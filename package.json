@@ -1,0 +1,14 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal website with study blog, media tracker, and daily feed.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "keywords": ["personal", "website", "blog", "media"],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs"
+}
