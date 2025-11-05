@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人栖息地 · 学习 × 书影音剧游 × 日常</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="branding">
+          <span class="branding__logo">LW</span>
+          <div class="branding__text">
+            <strong>林味</strong>
+            <small>写作 · 产品 · 创造者</small>
+          </div>
+        </div>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="#study">学习</a>
+          <a href="#media">书影音剧游</a>
+          <a href="#daily">日常</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Personal Habitat</p>
+          <h1>记录「学习 × 兴趣 × 生活」的个人网站</h1>
+          <p>
+            这是我在互联网上的栖息地：
+            <strong>学习</strong>
+            板块以博客形式沉淀方法论和心得；
+            <strong>书影音剧游</strong>
+            板块用卡片记录每一部作品与个人评分，并自动补充豆瓣、IMDb、IGN 等平台的评分与热门短评；
+            <strong>日常</strong>
+            板块模拟 QQ 说说 / 微信朋友圈的动态流，捕捉生活里的灵感火花。
+          </p>
+          <div class="hero__actions">
+            <a class="button" href="#study">阅读博客</a>
+            <a class="button button--secondary" href="#media">浏览条目</a>
+          </div>
+        </div>
+        <div class="hero__illustration" aria-hidden="true">
+          <div class="hero__orbit">
+            <span>学习</span>
+            <span>书影音</span>
+            <span>日常</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="study">
+        <div class="section__header">
+          <h2>学习 · 博客</h2>
+          <p class="section__subtitle">以问题驱动的深度学习记录</p>
+        </div>
+        <div class="blog-grid" id="blog-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section" id="media">
+        <div class="section__header">
+          <h2>书影音剧游</h2>
+          <p class="section__subtitle">以条目形式记录作品，自动汇聚外部评价</p>
+        </div>
+        <div class="media-panel">
+          <div class="media-panel__sidebar" role="tablist" aria-orientation="vertical">
+            <button class="media-tab is-active" role="tab" data-category="books" aria-selected="true">
+              <span>书籍</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="movies" aria-selected="false">
+              <span>电影</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="anime" aria-selected="false">
+              <span>番剧</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="music" aria-selected="false">
+              <span>音乐</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="games" aria-selected="false">
+              <span>游戏</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="theater" aria-selected="false">
+              <span>戏剧</span>
+            </button>
+          </div>
+          <div class="media-panel__content">
+            <div id="media-cards" class="media-grid" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="daily">
+        <div class="section__header">
+          <h2>日常 · 动态</h2>
+          <p class="section__subtitle">像朋友圈 / QQ 说说一样的生活记录</p>
+        </div>
+        <div class="daily-feed" id="daily-feed" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>© <span id="current-year"></span> 林味 · Personal Habitat</p>
+        <p>部署提示：Node.js 服务可直接运行在 Ubuntu 云服务器上，使用 <code>npm start</code> 启动。</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
