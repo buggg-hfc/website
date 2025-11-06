@@ -366,6 +366,7 @@ async function scrapeDouban(target) {
     const html = await fetchPage(target);
     const ratingMatch = html.match(/<strong class="rating_num"[^>]*>([\d.]+)<\/strong>/);
     const votesMatch = html.match(/<span property="v:votes">([\d,]+)<\/span>/);
+    const coverMatch = html.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i);
     const comments = [];
 
     const commentRegex = /<div class="comment-item"[\s\S]*?data-cid="\d+"[\s\S]*?<span class="votes vote-count">(\d+)<\/span>[\s\S]*?<a href="[^"]+"[^>]*>([^<]+)<\/a>[\s\S]*?<span class="short">([\s\S]*?)<\/span>/g;
@@ -383,7 +384,8 @@ async function scrapeDouban(target) {
       rating: ratingMatch ? parseFloat(ratingMatch[1]) : null,
       scale: 10,
       votes: votesMatch ? parseInt(votesMatch[1].replace(/,/g, ''), 10) : null,
-      hotComments: comments
+      hotComments: comments,
+      coverImage: coverMatch ? coverMatch[1] : null
     };
   } catch (error) {
     if (isDev) {
@@ -402,13 +404,18 @@ async function scrapeImdb(target) {
       rating: null,
       scale: 10,
       votes: null,
-      hotComments: []
+      hotComments: [],
+      coverImage: null
     };
 
     if (json && json.aggregateRating) {
       meta.rating = parseFloat(json.aggregateRating.ratingValue);
       meta.scale = parseFloat(json.aggregateRating.bestRating) || 10;
       meta.votes = parseInt(json.aggregateRating.ratingCount, 10) || null;
+    }
+
+    if (json && json.image) {
+      meta.coverImage = typeof json.image === 'string' ? json.image : json.image.url || null;
     }
 
     const reviewUrl = target.endsWith('/') ? `${target}reviews?ref_=tt_ov_rt` : `${target}/reviews?ref_=tt_ov_rt`;
@@ -440,14 +447,15 @@ async function scrapeImdb(target) {
 async function scrapeIgn(target) {
   try {
     const html = await fetchPage(target);
-    const json = parseJsonFromScripts(html, (data) => data['@type'] === 'Review' || data.reviewRating);
+    const json = parseJsonFromScripts(html, (data) => data['@type'] === 'Review' || data.reviewRating || data['@type'] === 'Game');
     const meta = {
       source: 'ign',
       rating: null,
       scale: 10,
       votes: null,
       hotComments: [],
-      summary: null
+      summary: null,
+      coverImage: null
     };
 
     if (json) {
@@ -459,6 +467,19 @@ async function scrapeIgn(target) {
         meta.summary = cleanText(json.description);
       } else if (json.reviewBody) {
         meta.summary = cleanText(json.reviewBody).slice(0, 160);
+      }
+      if (json.image) {
+        if (typeof json.image === 'string') {
+          meta.coverImage = json.image;
+        } else if (json.image.url) {
+          meta.coverImage = json.image.url;
+        }
+      } else if (json.itemReviewed && json.itemReviewed.image) {
+        if (typeof json.itemReviewed.image === 'string') {
+          meta.coverImage = json.itemReviewed.image;
+        } else if (json.itemReviewed.image.url) {
+          meta.coverImage = json.itemReviewed.image.url;
+        }
       }
     }
 
@@ -487,7 +508,16 @@ async function augmentMediaItem(item) {
     remote.ign = await fetchWithCache(`ign:${links.ign}`, () => scrapeIgn(links.ign));
   }
 
-  return { ...item, remote };
+  const merged = { ...item, remote };
+  if (!merged.coverImage) {
+    merged.coverImage =
+      (remote.imdb && remote.imdb.coverImage) ||
+      (remote.ign && remote.ign.coverImage) ||
+      (remote.douban && remote.douban.coverImage) ||
+      null;
+  }
+
+  return merged;
 }
 
 async function buildMediaResponse() {

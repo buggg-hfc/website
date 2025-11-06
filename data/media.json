@@ -4,7 +4,6 @@
       "id": "three-body-problem",
       "title": "三体",
       "creators": ["刘慈欣"],
-      "coverImage": "/assets/media/books/three-body.jpg",
       "summary": "硬科幻的里程碑，地球文明遭遇三体危机。",
       "personalRating": 9.5,
       "personalReview": "第一次感受到宇宙尺度下的无力感，也被叶文洁的选择深深震撼。",
@@ -16,7 +15,6 @@
       "id": "deep-work",
       "title": "深度工作",
       "creators": ["Cal Newport"],
-      "coverImage": "/assets/media/books/deep-work.jpg",
       "summary": "在喧嚣时代寻找专注力的实战指南。",
       "personalRating": 8.7,
       "personalReview": "搭配番茄工作法效果显著，尤其是 \"将重要任务前置\" 这一原则。",
@@ -30,7 +28,6 @@
       "id": "dune",
       "title": "沙丘",
       "creators": ["Denis Villeneuve"],
-      "coverImage": "/assets/media/movies/dune.jpg",
       "summary": "保罗·厄崔迪斯在沙漠星球上的命运展开。",
       "personalRating": 9.0,
       "personalReview": "IMAX 的沉浸感让人窒息，配乐与画面相得益彰。",
@@ -43,7 +40,6 @@
       "id": "past-lives",
       "title": "前世今生",
       "creators": ["Celine Song"],
-      "coverImage": "/assets/media/movies/past-lives.jpg",
       "summary": "童年青梅再聚，探讨人生选择与命运。",
       "personalRating": 8.8,
       "personalReview": "这部电影的克制和留白让我久久不能平静。",
@@ -58,26 +54,12 @@
       "id": "made-in-abyss",
       "title": "来自深渊",
       "creators": ["つくしあきひと"],
-      "coverImage": "/assets/media/anime/made-in-abyss.jpg",
       "summary": "一个关于探索与成长的黑暗童话。",
       "personalRating": 9.3,
       "personalReview": "层层深入的世界观和成长线扣人心弦。",
       "links": {
-        "douban": "https://movie.douban.com/subject/26910826/"
-      }
-    }
-  ],
-  "music": [
-    {
-      "id": "random-access-memories",
-      "title": "Random Access Memories",
-      "creators": ["Daft Punk"],
-      "coverImage": "/assets/media/music/ram.jpg",
-      "summary": "复古电子乐的极致之作。",
-      "personalRating": 9.2,
-      "personalReview": "从 \"Get Lucky\" 到 \"Contact\"，每一首都带来惊喜。",
-      "links": {
-        "douban": "https://music.douban.com/subject/20470928/"
+        "douban": "https://movie.douban.com/subject/26910826/",
+        "imdb": "https://www.imdb.com/title/tt6861562/"
       }
     }
   ],
@@ -86,7 +68,6 @@
       "id": "zelda-totk",
       "title": "塞尔达传说：王国之泪",
       "creators": ["任天堂"],
-      "coverImage": "/assets/media/games/totk.jpg",
       "summary": "开放世界再度进化，天空与地底的全新冒险。",
       "personalRating": 9.6,
       "personalReview": "超自由的建造系统完全打开了想象力。",
@@ -101,7 +82,6 @@
       "id": "war-of-roses",
       "title": "玫瑰战争",
       "creators": ["乌镇戏剧节"],
-      "coverImage": "/assets/media/theater/war-of-roses.jpg",
       "summary": "历史故事和现代舞台的碰撞。",
       "personalRating": 8.5,
       "personalReview": "灯光和舞美极具冲击力，结构上仍有值得改进的地方。",
