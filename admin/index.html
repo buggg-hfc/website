@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>内容管理后台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1 class="sidebar__title">内容管理</h1>
+        <nav class="sidebar__nav">
+          <button class="nav-button is-active" data-section="blogs">学习博客</button>
+          <button class="nav-button" data-section="media">书影音剧游</button>
+          <button class="nav-button" data-section="daily">日常动态</button>
+        </nav>
+        <div class="sidebar__footer">
+          <button id="change-token" class="link-button">更换令牌</button>
+        </div>
+      </aside>
+      <main class="content" id="content">
+        <section id="login-section" class="card card--center">
+          <h2>登录后台</h2>
+          <form id="login-form" class="form">
+            <label class="form__field">
+              <span>管理令牌</span>
+              <input type="password" name="token" autocomplete="current-password" required />
+            </label>
+            <button type="submit" class="primary">进入后台</button>
+          </form>
+          <p class="hint">请在服务器环境变量 <code>ADMIN_TOKEN</code> 中设置访问令牌。</p>
+          <div id="login-error" class="error" role="alert" hidden></div>
+        </section>
+
+        <section id="status-bar" class="status" hidden></section>
+
+        <section id="blogs-section" class="card section" hidden>
+          <header class="section__header">
+            <div>
+              <h2>学习博客</h2>
+              <p class="section__hint">以卡片形式管理博客文章，支持快速创建、编辑和删除。</p>
+            </div>
+            <button id="add-blog" class="secondary">新增文章</button>
+          </header>
+          <div id="blogs-list" class="form-list"></div>
+        </section>
+
+        <section id="media-section" class="card section" hidden>
+          <header class="section__header">
+            <div>
+              <h2>书影音剧游</h2>
+              <p class="section__hint">分门别类维护条目信息，可配置平台链接以自动拉取评分与热评。</p>
+            </div>
+            <div class="section__actions">
+              <label class="form__field form__field--inline">
+                <span>当前分类</span>
+                <select id="media-category-select"></select>
+              </label>
+              <button id="add-media" class="secondary">新增条目</button>
+            </div>
+          </header>
+          <div id="media-list" class="form-list"></div>
+        </section>
+
+        <section id="daily-section" class="card section" hidden>
+          <header class="section__header">
+            <div>
+              <h2>日常动态</h2>
+              <p class="section__hint">以朋友圈/说说风格记录日常灵感，支持多图和心情等字段。</p>
+            </div>
+            <button id="add-daily" class="secondary">新增动态</button>
+          </header>
+          <div id="daily-list" class="form-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学习笔记 · 林味的个人栖息地</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="branding">
+          <span class="branding__logo">LW</span>
+          <div class="branding__text">
+            <strong>林味</strong>
+            <small>写作 · 产品 · 创造者</small>
+          </div>
+        </div>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/index.html">首页</a>
+          <a href="/media.html">书影音剧游</a>
+          <a href="/daily.html">日常</a>
+          <a href="/admin/" class="site-nav__admin">管理后台</a>
+        </nav>
+      </div>
+    </header>
+
+    <main data-page="study">
+      <section class="page-hero">
+        <h1>学习笔记</h1>
+        <p>记录探索、拆解问题与构建方法论的过程。</p>
+      </section>
+
+      <section class="section">
+        <div class="section__header">
+          <h2>最新文章</h2>
+          <p class="section__subtitle">以问题驱动的深度记录</p>
+        </div>
+        <div class="blog-grid" id="blog-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>© <span id="current-year"></span> 林味 · Personal Habitat</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

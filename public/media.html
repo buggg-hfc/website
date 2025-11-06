@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>书影音剧游 · 林味的个人栖息地</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="branding">
+          <span class="branding__logo">LW</span>
+          <div class="branding__text">
+            <strong>林味</strong>
+            <small>写作 · 产品 · 创造者</small>
+          </div>
+        </div>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/index.html">首页</a>
+          <a href="/study.html">学习</a>
+          <a href="/daily.html">日常</a>
+          <a href="/admin/" class="site-nav__admin">管理后台</a>
+        </nav>
+      </div>
+    </header>
+
+    <main data-page="media">
+      <section class="page-hero">
+        <h1>书影音剧游</h1>
+        <p>为每一部作品记录个人观感，并自动补充豆瓣、IMDb、IGN 的评价数据。</p>
+      </section>
+
+      <section class="section">
+        <div class="media-panel">
+          <div class="media-panel__sidebar" role="tablist" aria-orientation="vertical">
+            <button class="media-tab is-active" role="tab" data-category="books" aria-selected="true">
+              <span>书籍</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="movies" aria-selected="false">
+              <span>电影</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="anime" aria-selected="false">
+              <span>番剧</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="games" aria-selected="false">
+              <span>游戏</span>
+            </button>
+            <button class="media-tab" role="tab" data-category="theater" aria-selected="false">
+              <span>戏剧</span>
+            </button>
+          </div>
+          <div class="media-panel__content">
+            <div id="media-cards" class="media-grid" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>© <span id="current-year"></span> 林味 · Personal Habitat</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

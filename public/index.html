@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人栖息地 · 关于我</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="branding">
+          <span class="branding__logo">LW</span>
+          <div class="branding__text">
+            <strong>林味</strong>
+            <small>写作 · 产品 · 创造者</small>
+          </div>
+        </div>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/index.html">首页</a>
+          <a href="/study.html">学习</a>
+          <a href="/media.html">书影音剧游</a>
+          <a href="/daily.html">日常</a>
+          <a href="/admin/" class="site-nav__admin">管理后台</a>
+        </nav>
+      </div>
+    </header>
+
+    <main data-page="home">
+      <section class="hero hero--home" id="top">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Personal Habitat</p>
+          <h1>你好，我是林味</h1>
+          <p>
+            写作、产品、以及所有与创造有关的事物，让我着迷。我在这里记录工作流、
+            读过的书与电影、还有生活里那些稍纵即逝的灵感。这是一个可以慢下来、认真打磨想法的地方。
+          </p>
+          <div class="hero__actions">
+            <a class="button" href="/study.html">学习笔记</a>
+            <a class="button button--secondary" href="/media.html">书影音剧游</a>
+            <a class="button button--ghost" href="/daily.html">日常片段</a>
+          </div>
+        </div>
+        <figure class="hero__portrait">
+          <img src="https://i.pravatar.cc/600?img=65" alt="林味的个人照片" loading="lazy" />
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>© <span id="current-year"></span> 林味 · Personal Habitat</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
